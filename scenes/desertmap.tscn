@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/char.tscn" type="PackedScene" id=1]
+[ext_resource path="res://models/maps/desert_bus/desert/gltf/untitled.glb" type="PackedScene" id=2]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( 610.24, 547.28, 4, 610.24, 547.28, -4, -610.24, 547.28, 4, 610.24, -547.28, 4, 610.24, -547.28, -4, -610.24, 547.28, -4, -610.24, -547.28, 4, -610.24, -547.28, -4 )
+
+[node name="Spatial" type="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 211.03, 0 )
+
+[node name="untitled" parent="." instance=ExtResource( 2 )]
+
+[node name="Part1" parent="untitled" index="0"]
+transform = Transform( -1.41025, 0, 0, 0, -5.12712e-07, -1, 0, 1.72038, -2.98023e-07, 0, -250, 0 )
+
+[node name="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -205.744, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -1.41025, 0, 0, 0, -5.12712e-07, -1, 0, 1.72038, -2.98023e-07, 0, -250, 0 )
+shape = SubResource( 1 )
+
+[editable path="untitled"]
